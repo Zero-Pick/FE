@@ -5,171 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zero Pick</title>
     <link href="../css/output.css" rel="stylesheet">
+    <script type="module" src="../components/main-items1.js"></script>
+    <script type="module" src="../components/main-items2.js"></script>
+    <script type="module" src="../components/main-news.js"></script>
     <script type="module" src="../components/header.js"></script>
   </head>
-  <body>
+  <body >
     <!-- 헤더 -->
     <my-header></my-header>
 
-    <!-- 검색 배너-->
-    <div id="search-banner" class="bg-orange-200 mb-4">
-      <div>
-        <h1 class="font-bold">건강한 제로를 위한 시작!</h1>
-        <h1 class="font-bold">제로픽에서 확인하고 구매하세요</h1>
-        <h3>제품명, 성분, 브랜드로 원하는 제로 식품을 빠르게 찾아보세요</h3>
-      </div>
-      <div id="search-bar">
-        <form action="/search" method="GET" style="display: flex; align-items: center;">
-          <input type="text" name="query" placeholder="검색어를 입력하세요" />
-          <button type="submit" class="bg-black text-white" cursor: pointer;>검색</button>
-        </form>
-      </div>
-    </div>
-
-
-    <!-- 카테고리별 -->
-    <div id="category-best">
-      <h1 class="font-bold mb-4">카테고리별 BEST 🤗</h1>
-      <diV class="flex">
-      <!-- 왼쪽 메뉴 -->
-      <div id="side-bar" class="w-1/4">
-        <ul class="space-y-4">
-          <li class="bg-gray-200 p-4">카테고리 1</ㅠ>
-          <li class="bg-gray-200 p-4 ">카테고리 2</li>
-          <li class="bg-gray-200 p-4 ">카테고리 3</li>
-          <li class="bg-gray-200 p-4 ">카테고리 4</li>
-          <li class="bg-gray-200 p-4 ">카테고리 5</li>
-          <li class="bg-gray-200 p-4 ">카테고리 5</li>
-        </ul>
-      </div>
-      <!-- 오른쪽 상품 목록 -->
-      <div class="w-3/4 grid grid-cols-3 gap-4">
-        <!-- 1 상품 -->
-        <div class="bg-white p-4">
-          <!-- 이미지 -->
-          <div >
-            <div class="bg-gray-300 h-40 mb-4"></div> 
-          </div>
-          <!-- 상품 정보 -->
-            <div id="zero" class=" bg-black text-white text-xs w-1/3">제로슈거</div> 
-            <div class="flex justify-between mt-2">
-            <h2 class=" font-bold mb-2">상품명 상품명 상품명</h2>
-            <button class="flex items-center bg-purple-100 text-purple-700 px-2 py-1 rounded">찜버튼</button>
-          </div>
-          <!-- 평점 가격 정보 -->
-          <div class="flex justify-between mt-2">
-            <span class="text-sm text-yellow-500">★ 4.22 (14)</span>
-            <span class="text-sm text-gray-500">2,000원</span>
-          </div>
-          <div id="review">
-            <div class="bg-gray-100 p-4  flex items-center space-x-4">
-              <!-- 프로필  -->
-              <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-              <!-- 사용자 정보 및 별점 -->
-              <div class="flex-1">
-                <div class="flex justify-between items-center">
-                  <span class="font-semibold">Emily</span>
-                  <span class="text-yellow-500">★★★★★</span>
-                </div>
-                <p class="text-gray-600 text-sm mt-1">The ZeroCal Energy </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2 상품 -->
-        <div class="bg-white p-4">
-          <!-- 이미지 -->
-          <div >
-            <div class="bg-gray-300 h-40 mb-4"></div> 
-          </div>
-          <!-- 상품 정보 -->
-            <div id="zero" class=" bg-black text-white text-xs w-1/3">제로슈거</div> 
-            <div class="flex justify-between mt-2">
-            <h2 class=" font-bold mb-2">상품명 상품명 상품명</h2>
-            <button class="flex items-center bg-purple-100 text-purple-700 px-2 py-1 rounded">찜버튼</button>
-          </div>
-          <!-- 평점 가격 정보 -->
-          <div class="flex justify-between mt-2">
-            <span class="text-sm text-yellow-500">★ 4.22 (14)</span>
-            <span class="text-sm text-gray-500">2,000원</span>
-          </div>
-          <div id="review">
-            <div class="bg-gray-100 p-4  flex items-center space-x-4">
-              <!-- 프로필  -->
-              <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-              <!-- 사용자 정보 및 별점 -->
-              <div class="flex-1">
-                <div class="flex justify-between items-center">
-                  <span class="font-semibold">Emily</span>
-                  <span class="text-yellow-500">★★★★★</span>
-                </div>
-                <p class="text-gray-600 text-sm mt-1">The ZeroCal Energy </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3 상품 -->
-        <div class="bg-white p-4">
-          <!-- 이미지 -->
-          <div >
-            <div class="bg-gray-300 h-40 mb-4"></div> 
-          </div>
-          <!-- 상품 정보 -->
-            <div id="zero" class=" bg-black text-white text-xs w-1/3">제로슈거</div> 
-            <div class="flex justify-between mt-2">
-            <h2 class=" font-bold mb-2">상품명 상품명 상품명</h2>
-            <button class="flex items-center bg-purple-100 text-purple-700 px-2 py-1 rounded">찜버튼</button>
-          </div>
-          <!-- 평점 가격 정보 -->
-          <div class="flex justify-between mt-2">
-            <span class="text-sm text-yellow-500">★ 4.22 (14)</span>
-            <span class="text-sm text-gray-500">2,000원</span>
-          </div>
-          <div id="review">
-            <div class="bg-gray-100 p-4  flex items-center space-x-4">
-              <!-- 프로필  -->
-              <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-              <!-- 사용자 정보 및 별점 -->
-              <div class="flex-1">
-                <div class="flex justify-between items-center">
-                  <span class="font-semibold">Emily</span>
-                  <span class="text-yellow-500">★★★★★</span>
-                </div>
-                <p class="text-gray-600 text-sm mt-1">The ZeroCal Energy </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </diV>
-      </div>
-    </div>
-
-    <!-- 배너 나누기 -->
-    <div id="banner-1">
-      <div class="h-40 bg-blue-500 mb-4">
-        배너 공간
-      </div>      
-    </div>
-
-
-    <!-- 많은 분들 주목 -->
-    <div id="look-best">
-      <h1 class="font-bold mb-4">지금 많은 분들이 주목하는 👀</h1>
-      <p> 더보기</p>
-    </div>  
    
-    <!-- 당신 취향 -->
-    <div id="you-best">
-      <h1 class="font-bold mb-4">당신의 취향에 딱 맞는 ✅</h1>
-      <p> 더보기</p>
-    </div>  
-     
+      <!-- 검색 배너 -->
+      <div id="search-banner" class="bg-gray-500 text-center text-white py-10">
+        <div>
+          <h1 class="font-bold text-2xl mb-2 text-main-02">건강한 제로를 위한 시작!</h1>
+          <h1 class="font-bold text-2xl mb-4"><span class="text-main-01">제로픽</span>에서 확인하고 구매하세요</h1>
+          <h3 class="text-sm">제품명, 성분, 브랜드로 원하는 제로 식품을 빠르게 찾아보세요</h3>
+        </div>
+        <div id="search-bar" class="mt-4">
+          <form action="/search" method="GET" class="flex justify-center items-center">
+            <input type="text" name="query" placeholder="검색어를 입력하세요" class="p-2 rounded-sm w-80" />
+            <button type="submit" class="bg-black text-white px-4 py-2 ml-2 rounded-sm cursor-pointer">검색</button>
+          </form>
+        </div>
+        
+      </div>
+    
+    <!-- 메인 컨텐츠 -->
+    <div class="max-w-screen-xl mx-auto px-4"> 
+    
+
+      <!-- 카테고리별 -->
+      <div id="category-best" class="mt-8">
+        <h1 class="font-bold mb-4 text-xl">카테고리별 BEST 🤗</h1>
+        <div class="flex">
+          <!-- 왼쪽 메뉴 -->
+          <div id="side-bar" class="w-1/4">
+            <ul class="space-y-4">
+              <li class="bg-gray-200 p-4">카테고리 1</li>
+              <li class="bg-gray-200 p-4">카테고리 2</li>
+              <li class="bg-gray-200 p-4">카테고리 3</li>
+              <li class="bg-gray-200 p-4">카테고리 4</li>
+              <li class="bg-gray-200 p-4">카테고리 5</li>
+              <li class="bg-gray-200 p-4">카테고리 6</li>
+            </ul>
+          </div>
+          <!-- 오른쪽 상품 목록 -->
+          <div class="w-3/4 grid grid-cols-3 gap-4" id="product-list">
+          </div>
+        </div>
+      </div>
+
+      <!-- 배너 나누기 -->
+      <div id="banner-1" class="my-8">
+        <div class="h-40 bg-gray-500 mb-4">배너 공간</div>
+      </div>
+
+      <!-- 많은 분들 주목 -->
+      <div id="look-best" class="mt-8">
+        <div class="flex justify-between items-center mb-4"> 
+          <h1 class="font-bold text-xl mb-4">지금 많은 분들이 주목하는 👀</h1>
+          <p class="text-right text-sm text-gray-600 cursor-pointer">더보기</p>
+        </div>
+        <div class="grid grid-cols-4 gap-4" id="highlighted-products"></div> 
+      </div>
 
 
+      <!-- 당신 취향 -->
+      <div id="you-best" class="mt-8">
+        <div class="flex justify-between items-center mb-4"> 
+          <h1 class="font-bold text-xl mb-4">당신의 취향에 딱 맞는 ✅</h1>
+          <p class="text-right text-sm text-gray-600 cursor-pointer">더보기</p>
+        </div>
+        <div class="grid grid-cols-4 gap-4" id="preferred-products"></div> 
+      </div>
+   
 
-    <script src="../js/home.js"></script>
+    <!-- 제로상품 이모저모 -->
+    <div id="article-section" class="mt-8">
+      <div class="flex justify-between items-center mb-4"> 
+        <h1 class="font-bold text-xl mb-4">제로상품 이모저모 🪧</h1>
+        <p class="text-right text-sm text-gray-600">2024.10.08 23:59 갱신</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4" id="article-list">
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+
+    <!-- 상품 리스트, 뉴스 JS-->
+    <script type="module">
+      import { createMainItems1 } from '../components/main-items1.js';
+      import { createMainItems2 } from '../components/main-items2.js';
+      import { createArticle } from '../components/main-news.js';
+
+      // 샘플 상품 데이터
+      const products = [
+        {
+          name: '상품명1',
+          sugarType: '제로슈거',
+          rating: '4.22',
+          reviewsCount: 14,
+          price: '2,000원',
+          reviewer: 'Emily',
+          reviewText: 'The ZeroCal Energy Drink is...',
+        },
+        {
+          name: '상품명2',
+          sugarType: '제로슈거',
+          rating: '4.5',
+          reviewsCount: 18,
+          price: '2,500원',
+          reviewer: 'John',
+          reviewText: 'Great zero-sugar alternative...',
+        },
+        {
+          name: '상품명3',
+          sugarType: '제로슈거',
+          rating: '4.8',
+          reviewsCount: 21,
+          price: '3,000원',
+          reviewer: 'Jane',
+          reviewText: 'The best energy drink...',
+        },
+        {
+          name: '상품명4',
+          sugarType: '제로슈거',
+          rating: '4.7',
+          reviewsCount: 20,
+          price: '3,500원',
+          reviewer: 'Chris',
+          reviewText: 'Perfect zero-calorie option...',
+        }
+      ];
+
+
+      // 뉴스 데이터
+      const articles = [
+        { title: "기사 제목 1", content: "기사 내용 1 기사 내용 기사 내용 기사 내용..." },
+        { title: "기사 제목 2", content: "기사 내용 2 기사 내용 기사 내용 기사 내용..." },
+        { title: "기사 제목 3", content: "기사 내용 3 기사 내용 기사 내용 기사 내용..." },
+        { title: "기사 제목 4", content: "기사 내용 4 기사 내용 기사 내용 기사 내용..." }
+      ];
+
+
+      // 상품 목록 렌더링
+      const productList = document.getElementById('product-list');
+      products.slice(0, 3).forEach(product => {
+        productList.innerHTML += createMainItems1(product);
+      });
+
+      const highlightedProducts = document.getElementById('highlighted-products');
+      products.forEach(product => {
+        highlightedProducts.innerHTML += createMainItems2(product);
+      });
+
+      const preferredProducts = document.getElementById('preferred-products');
+      products.forEach(product => {
+        preferredProducts.innerHTML += createMainItems2(product);
+      });
+
+      // 기사 목록 렌더링
+      const articleList = document.getElementById('article-list');
+      articles.forEach(article => {
+        articleList.innerHTML += createArticle(article);
+      });
+
+    </script>
   </body>
 </html>
