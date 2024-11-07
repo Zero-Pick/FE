@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script type="module" src="../components/header-search.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <my-search-header></my-search-header>
+
+    <div class="container mx-auto pt-10">
+      <!-- 뒤로 가기 및 제목 -->
+      <div class="flex items-center space-x-3">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-10 h-10 stroke-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </div>
+        <h1 class="font-bold text-3xl">"오레오"검색 결과</h1>
+      </div>
+
+      <!-- 상품 필터 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <button class="bg-gray-200 px-3 py-2 mr-3">제로 슈거</button>
+          <button class="bg-gray-200 px-3 py-2 mr-3">제로칼로리</button>
+          <button class="bg-gray-200 px-3 py-2">혈당 관리 인증</button>
+        </div>
+        <div class="flex items-center space-x-4 my-4">
+          <div
+            class="flex items-center space-x-1 my-6 cursor-pointer border-2 border-black p-2"
+          >
+            <p>이런 상품을 찾아요</p>
+            <div class="flex flex-row">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="flex items-center space-x-1 my-6 cursor-pointer border-2 border-black p-2"
+          >
+            <p>제외할 대체감미료</p>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 총 개수 및 정렬 필터 -->
+      <div class="flex justify-between items-center mb-6">
+        <p class="font-bold text-xl">총 30개</p>
+        <div>
+          <button class="bg-gray-200 px-3 py-2 mr-3">인기순</button>
+          <button class="bg-gray-200 px-3 py-2 mr-3">신상품순</button>
+          <button class="bg-gray-200 px-3 py-2 mr-3">리뷰 많은 순</button>
+          <button class="bg-gray-200 px-3 py-2">별점 높은 순</button>
+        </div>
+      </div>
+
+      <!-- 아이템 -->
+      <div class="grid grid-cols-4 gap-4" id="products"></div>
+    </div>
+
+    <script type="module">
+      import { displayItems } from '../js/search-result.js';
+      document.addEventListener('DOMContentLoaded', displayItems);
+    </script>
+
+    <script src="../js/search-result.js"></script>
+  </body>
+</html>

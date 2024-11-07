@@ -20,8 +20,8 @@ class MySearchHeader extends HTMLElement {
           type="text"
           name="search"
           id="search"
-          placeholder="검색어를 입력해주세요"
-          class="w-1/2 justify-between text-black p-4 mx-10 focus:outline-none"
+          placeholder="찾는 제로 식품을 검색하세요.(제품명, 브랜드, 성분 등)"
+          class="w-1/2 justify-between bg-gray-200 text-black p-4 mx-10 focus:outline-none"
         />
         <div class="flex space-x-4 font-bold">
           <a id="lately" href="" class="p-4">최근 본 상품</a>
