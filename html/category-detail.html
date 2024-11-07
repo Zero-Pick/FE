@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios" />
+    <script type="module" src="../components/main-items2.js"></script>
+    <script type="module" src="../components/main-news.js"></script>
+    <script type="module" src="../components/header-search.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <my-search-header></my-search-header>
+    
+    <!-- 메인 컨텐츠 -->
+    <div class="max-w-screen-xl mx-auto px-4"> 
+      <div class="flex cursor-pointer mt-4 mb-4" onclick="goBack()">
+        <span class="material-symbols-outlined font-bold text-xl">
+          arrow_back_ios
+        </span>
+        <span class="font-bold text-xl">음료</span>
+      </div>
+
+      <!-- 카테고리 배너 -->
+      <div id="category-banner" class="bg-gray-500 text-center text-white py-10">
+        <h3 class="text-sm">배너 영역</h3>
+      </div>
+
+      <!-- 카테고리 BEST -->
+      <div id="category-best" class="mt-8">
+        <h1 class="font-bold mb-4 text-xl text-center">음료 BEST 🤗</h1>
+        <!-- 상품 목록 -->
+        <div class="grid grid-cols-4 gap-4" id="highlighted-products"></div>
+      </div>
+
+      <!-- 구분선 -->
+      <div class="border-t border-gray-300 my-6"></div>
+
+      <!-- 카테고리 전상품 -->
+      <div id="category-all" class="mt-8">
+        <h1 class="font-bold text-xl mb-4 text-center">전 상품</h1>
+
+        <!-- 필터 1 -->
+        <div class="flex items-center justify-between mb-4">
+          <!-- 왼쪽 필터 -->
+          <div class="flex space-x-2">
+            <button class="bg-gray-200 px-4 py-2">제로슈거</button>
+            <button class="bg-gray-200 px-4 py-2">제로칼로리</button>
+            <button class="bg-gray-200 px-4 py-2">혈당 관리 인증</button>
+          </div>
+
+          <!-- 오른쪽 필터 -->
+          <div class="flex space-x-2 relative">
+            <button class="border border-gray-400 px-4 py-2" onclick="toggleDropdown()">이런 상품을 찾아요 ▼</button>
+            <button class="border border-gray-400 px-4 py-2">제외할 대체감미료 ▼</button>
+
+            <!-- 드롭다운 옵션 -->
+            <div id="filterDropdown" class="absolute top-full right-44 mt-2 w-full bg-white border border-gray-300 shadow-lg p-4 hidden">
+              <div class="grid grid-cols-3 gap-2 mb-4">
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">달달해요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">달지 않고 깔끔해요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">식사 대신 든든해요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">간식으로 딱 좋아요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">다이어트에 딱이에요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">혈당 걱정 덜어줘요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">가성비가 좋아요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">맛의 종류가 다양해요</button>
+                <button class="bg-gray-200 px-2 py-1 inline-flex justify-center">휴대하기 편해요</button>
+              </div>
+              <div class="flex justify-end space-x-2">
+                <button onclick="toggleDropdown()" class="bg-white text-main-01 px-4 py-2 border border-gray-300">닫기</button>
+                <button class="bg-main-01 text-white px-4 py-2">적용</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 구분선 -->
+      <div class="border-t border-gray-300 my-6"></div>
+
+      <!-- 필터 2 -->
+      <div class="flex items-center justify-between mb-2">
+        <div class="font-bold ml-4">
+          총 <span class="text-main-01">30</span>개
+        </div>
+
+        <!-- 정렬 기준 -->
+        <div class="flex space-x-4 text-gray-600">
+          <button>인기순</button>
+          <button>신상품순</button>
+          <button>리뷰 많은 순</button>
+          <button>별점 높은 순</button>
+        </div>
+      </div>
+
+      <!-- 구분선 -->
+      <div class="border-t border-gray-300 my-6"></div>
+
+      <!-- 상품 목록-->
+      <div class="grid grid-cols-4 gap-4" id="preferred-products"></div> 
+    </div>
+
+    <script>
+      // 뒤로가기
+      function goBack() {
+        window.location.href = "index.html";
+      }
+
+      // 필터
+      function toggleDropdown() {
+        const dropdown = document.getElementById('filterDropdown');
+        dropdown.classList.toggle('hidden');
+      }
+    </script>
+
+    <!-- 상품 리스트, 뉴스 JS-->
+    <script type="module">
+      import { createMainItems2 } from '../components/main-items2.js';
+
+      // 샘플 상품 데이터
+      const products = [
+        {
+          name: '상품명1',
+          sugarType: '제로슈거',
+          rating: '4.22',
+          reviewsCount: 14,
+          price: '2,000원',
+        },
+        {
+          name: '상품명2',
+          sugarType: '제로슈거',
+          rating: '4.5',
+          reviewsCount: 18,
+          price: '2,500원',
+        },
+        {
+          name: '상품명3',
+          sugarType: '제로슈거',
+          rating: '4.8',
+          reviewsCount: 21,
+          price: '3,000원',
+        },
+        {
+          name: '상품명4',
+          sugarType: '제로슈거',
+          rating: '4.7',
+          reviewsCount: 20,
+          price: '3,500원',
+        }
+      ];
+
+      // 상품 목록 렌더링
+      const highlightedProducts = document.getElementById('highlighted-products');
+      products.forEach(product => {
+        highlightedProducts.innerHTML += createMainItems2(product);
+      });
+
+      const preferredProducts = document.getElementById('preferred-products');
+      products.forEach(product => {
+        preferredProducts.innerHTML += createMainItems2(product);
+      });
+
+      // 상품 더 추가 (레이아웃 잡기용)
+      for (let i = 0; i < 2; i++) {
+        products.forEach(product => {
+          preferredProducts.innerHTML += createMainItems2(product);
+        });
+      }
+    </script>
+  </body>
+</html>
