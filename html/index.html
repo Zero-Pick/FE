@@ -10,31 +10,27 @@
     <script type="module" src="../components/main-news.js"></script>
     <script type="module" src="../components/header.js"></script>
   </head>
-  <body >
+  <body>
     <!-- 헤더 -->
     <my-header></my-header>
 
-   
-      <!-- 검색 배너 -->
-      <div id="search-banner" class="bg-gray-500 text-center text-white py-10">
-        <div>
-          <h1 class="font-bold text-2xl mb-2 text-main-02">건강한 제로를 위한 시작!</h1>
-          <h1 class="font-bold text-2xl mb-4"><span class="text-main-01">제로픽</span>에서 확인하고 구매하세요</h1>
-          <h3 class="text-sm">제품명, 성분, 브랜드로 원하는 제로 식품을 빠르게 찾아보세요</h3>
-        </div>
-        <div id="search-bar" class="mt-4">
-          <form action="/search" method="GET" class="flex justify-center items-center">
-            <input type="text" name="query" placeholder="검색어를 입력하세요" class="p-2 rounded-sm w-80" />
-            <button type="submit" class="bg-black text-white px-4 py-2 ml-2 rounded-sm cursor-pointer">검색</button>
-          </form>
-        </div>
-        
+    <!-- 검색 배너 -->
+    <div id="search-banner" class="bg-gray-500 text-center text-white py-10">
+      <div>
+        <h1 class="font-bold text-2xl mb-2 text-main-02">건강한 제로를 위한 시작!</h1>
+        <h1 class="font-bold text-2xl mb-4"><span class="text-main-01">제로픽</span>에서 확인하고 구매하세요</h1>
+        <h3 class="text-sm">제품명, 성분, 브랜드로 원하는 제로 식품을 빠르게 찾아보세요</h3>
       </div>
+      <div id="search-bar" class="mt-4">
+        <form action="/search" method="GET" class="flex justify-center items-center">
+          <input type="text" name="query" placeholder="검색어를 입력하세요" class="p-2 rounded-sm w-80" />
+          <button type="submit" class="bg-black text-white px-4 py-2 ml-2 rounded-sm cursor-pointer">검색</button>
+        </form>
+      </div>
+    </div>
     
     <!-- 메인 컨텐츠 -->
     <div class="max-w-screen-xl mx-auto px-4"> 
-    
-
       <!-- 카테고리별 -->
       <div id="category-best" class="mt-8">
         <h1 class="font-bold mb-4 text-xl">카테고리별 BEST 🤗</h1>
@@ -42,17 +38,17 @@
           <!-- 왼쪽 메뉴 -->
           <div id="side-bar" class="w-1/4">
             <ul class="space-y-4">
-              <li class="bg-gray-200 p-4">카테고리 1</li>
-              <li class="bg-gray-200 p-4">카테고리 2</li>
-              <li class="bg-gray-200 p-4">카테고리 3</li>
-              <li class="bg-gray-200 p-4">카테고리 4</li>
-              <li class="bg-gray-200 p-4">카테고리 5</li>
-              <li class="bg-gray-200 p-4">카테고리 6</li>
+              <li class="bg-gray-200 p-4">음료 차</li>
+              <li class="bg-gray-200 p-4">고구마 빵</li>
+              <li class="bg-gray-200 p-4">유가공품</li>
+              <li class="bg-gray-200 p-4">아이스크림 빙과</li>
+              <li class="bg-gray-200 p-4">초콜릿</li>
+              <li class="bg-gray-200 p-4">면 떡</li>
+              <li class="bg-gray-200 p-4">농수산가공식품</li>
             </ul>
           </div>
           <!-- 오른쪽 상품 목록 -->
-          <div class="w-3/4 grid grid-cols-3 gap-4" id="product-list">
-          </div>
+          <div class="w-3/4 grid grid-cols-3 gap-4" id="product-list"></div>
         </div>
       </div>
 
@@ -70,7 +66,6 @@
         <div class="grid grid-cols-4 gap-4" id="highlighted-products"></div> 
       </div>
 
-
       <!-- 당신 취향 -->
       <div id="you-best" class="mt-8">
         <div class="flex justify-between items-center mb-4"> 
@@ -79,21 +74,16 @@
         </div>
         <div class="grid grid-cols-4 gap-4" id="preferred-products"></div> 
       </div>
-   
 
-    <!-- 제로상품 이모저모 -->
-    <div id="article-section" class="mt-8">
-      <div class="flex justify-between items-center mb-4"> 
-        <h1 class="font-bold text-xl mb-4">제로상품 이모저모 🪧</h1>
-        <p class="text-right text-sm text-gray-600">2024.10.08 23:59 갱신</p>
-      </div>
-      <div class="grid grid-cols-2 gap-4" id="article-list">
+      <!-- 제로상품 이모저모 -->
+      <div id="article-section" class="mt-8">
+        <div class="flex justify-between items-center mb-4"> 
+          <h1 class="font-bold text-xl mb-4">제로상품 이모저모 🪧</h1>
+          <p class="text-right text-sm text-gray-600">2024.10.08 23:59 갱신</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4" id="article-list"></div>
       </div>
     </div>
-
-
-    </div>
-  </div>
 
     <!-- 상품 리스트, 뉴스 JS-->
     <script type="module">
@@ -141,7 +131,6 @@
         }
       ];
 
-
       // 뉴스 데이터
       const articles = [
         { title: "기사 제목 1", content: "기사 내용 1 기사 내용 기사 내용 기사 내용..." },
@@ -149,7 +138,6 @@
         { title: "기사 제목 3", content: "기사 내용 3 기사 내용 기사 내용 기사 내용..." },
         { title: "기사 제목 4", content: "기사 내용 4 기사 내용 기사 내용 기사 내용..." }
       ];
-
 
       // 상품 목록 렌더링
       const productList = document.getElementById('product-list');
@@ -172,7 +160,6 @@
       articles.forEach(article => {
         articleList.innerHTML += createArticle(article);
       });
-
     </script>
   </body>
 </html>
