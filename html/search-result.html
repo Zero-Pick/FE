@@ -6,6 +6,7 @@
     <title>Zero Pick</title>
     <link href="../css/output.css" rel="stylesheet" />
     <script type="module" src="../components/header-search.js"></script>
+    <script type="module" src="../components/search-filter.js"></script>
   </head>
   <body>
     <!-- 헤더 -->
@@ -33,57 +34,7 @@
       </div>
 
       <!-- 상품 필터 -->
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-2">
-          <button class="bg-gray-200 px-3 py-2 mr-3">제로 슈거</button>
-          <button class="bg-gray-200 px-3 py-2 mr-3">제로칼로리</button>
-          <button class="bg-gray-200 px-3 py-2">혈당 관리 인증</button>
-        </div>
-        <div class="flex items-center space-x-4 my-4">
-          <div
-            class="flex items-center space-x-1 my-6 cursor-pointer border-2 border-black p-2"
-          >
-            <p>이런 상품을 찾아요</p>
-            <div class="flex flex-row">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </div>
-          </div>
-          <div
-            class="flex items-center space-x-1 my-6 cursor-pointer border-2 border-black p-2"
-          >
-            <p>제외할 대체감미료</p>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
+      <search-filter></search-filter>
 
       <!-- 총 개수 및 정렬 필터 -->
       <div class="flex justify-between items-center mb-6">
