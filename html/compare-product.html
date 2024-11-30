@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제품 비교하기</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <script type="module" src="../components/header-search.js"></script>
+  </head>
+  <body class="bg-white">
+    <my-search-header></my-search-header>
+    <!-- 헤더 -->
+    <header class="flex items-center p-4 bg-white ">
+      <button class="mx-auto text-xl font-bold">&lt; 제품 비교하기</button>
+    </header>
+
+    <!-- 비교 테이블 -->
+    <div class="max-w-6xl mx-auto mt-8 bg-white p-6">
+      <table class="table-auto w-full text-center">
+        <tbody id="comparison-table"></tbody>
+      </table>
+    </div>
+
+    <script>
+      // 제품 데이터
+      const productData = [
+        {
+          name: `
+            <div class="w-28 h-28 bg-gray-300 mx-auto mb-4">제품이미지</div>
+            <div class="text-center mb-4">
+              <span class="bg-black text-white text-sm inline-block px-2 py-1 mb-1">제로칼로리</span>
+              <span class="bg-black text-white text-sm inline-block px-2 py-1">제로슈거</span>
+            </div>
+            <p class="text-center text-md font-semibold mb-4">제품명1</p>
+            <div class="flex flex-col space-y-2">
+              <button class="bg-red-300 text-white py-2 px-4">찜하기</button>
+              <button class="text-gray-500 text-sm py-2 px-4">X</button>
+            </div>
+          `,
+          sugar: `<p class="text-sm">8g</p>`,
+          calories: `<p class="text-sm">2kcal</p>`,
+          sweeteners: `
+            <div class="flex flex-col items-center space-y-2">
+              <span class="bg-gray-200 text-sm px-2 py-1 rounded">대체감미료1</span>
+              <span class="bg-gray-200 text-sm px-2 py-1 rounded">대체감미료2</span>
+            </div>
+          `,
+          rating: `<p>⭐⭐⭐⭐⭐</p><p>4.66점</p>`,
+          tags: `
+            <div class="flex flex-col items-center space-y-4">
+              <div>
+                <p class="font-semibold text-2xl">🥰</p>
+                <ul class="text-sm text-center space-y-2">
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">💪 건강한 선택</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">🍭 간편식에 딱</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">👍 재구매 의사 100%</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-2xl">😅</p>
+                <ul class="text-sm text-center space-y-2">
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">❌ 가격이 높아요</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">💔 맛이 기대와 달라요</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">🔍 성분이 불확실해요</li>
+                </ul>
+              </div>
+            </div>
+          `,
+        },
+        {
+          name: `
+            <div class="w-28 h-28 bg-gray-300 mx-auto mb-4">제품이미지</div>
+            <div class="text-center mb-4">
+              <span class="bg-black text-white text-sm inline-block px-2 py-1 mb-1">제로칼로리</span>
+              <span class="bg-black text-white text-sm inline-block px-2 py-1">제로슈거</span>
+            </div>
+            <p class="text-center text-md font-semibold mb-4">제품명1</p>
+            <div class="flex flex-col space-y-2">
+              <button class="bg-red-300 text-white py-2 px-4">찜하기</button>
+              <button class="text-gray-500 text-sm py-2 px-4">X</button>
+            </div>
+          `,
+          sugar: `<p class="text-sm">8g</p>`,
+          calories: `<p class="text-sm">2kcal</p>`,
+          sweeteners: `
+            <div class="flex flex-col items-center space-y-2">
+              <span class="bg-gray-200 text-sm px-2 py-1 rounded">대체감미료1</span>
+              <span class="bg-gray-200 text-sm px-2 py-1 rounded">대체감미료2</span>
+            </div>
+          `,
+          rating: `<p>⭐⭐⭐⭐⭐</p><p>4.66점</p>`,
+          tags: `
+            <div class="flex flex-col items-center space-y-4">
+              <div>
+                <p class="font-semibold text-2xl">🥰</p>
+                <ul class="text-sm text-center space-y-2">
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">💪 건강한 선택</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">🍭 간편식에 딱</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">👍 재구매 의사 100%</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-2xl">😅</p>
+                <ul class="text-sm text-center space-y-2">
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">❌ 가격이 높아요</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">💔 맛이 기대와 달라요</li>
+                  <li class="bg-gray-200 text-sm px-2 py-1 rounded">🔍 성분이 불확실해요</li>
+                </ul>
+              </div>
+            </div>
+          `,
+        },
+      ];
+
+      // 3개보다 적으면
+      while (productData.length < 3) {
+        productData.push({
+          name: `
+            <div class="w-28 h-28 bg-white border text-sm mx-auto mb-4">제품 담으러 가기</div>
+          `,
+          sugar: `<p class="text-gray-200">담은 제품이 없어요</p>`,
+          calories: `<p class="text-gray-200">담은 제품이 없어요</p>`,
+          sweeteners: `<p class="text-gray-200">담은 제품이 없어요</p>`,
+          rating: `<p class="text-gray-200">담은 제품이 없어요</p>`,
+          tags: `<p class="text-gray-200">담은 제품이 없어요</p>`,
+        });
+      }
+
+      // 테이블 카테고리 연결
+      const categories = [
+        { label: "제품 정보", key: "name", isSeparator: true },
+        { label: "당류", key: "sugar" },
+        { label: "칼로리양", key: "calories" },
+        { label: "대체감미료", key: "sweeteners", isBottomSeparator: true },
+        { label: "별점", key: "rating" },
+        { label: "리뷰 TOP 태그", key: "tags" },
+      ];
+
+      const comparisonTable = document.getElementById("comparison-table");
+
+      categories.forEach((category) => {
+        const row = document.createElement("tr");
+
+        // 카테고리 레이블
+        row.innerHTML += `<td class="px-4 py-4 font-bold text-center">${category.label}</td>`; // Add vertical padding with py-4
+
+        // 상품 넣기
+        productData.forEach((product) => {
+          const cellContent = product[category.key];
+          row.innerHTML += `<td class="px-4 py-8 text-center">${cellContent}</td>`;
+        });
+        comparisonTable.appendChild(row);
+
+        if (category.isSeparator) {
+          const separatorRow = document.createElement("tr");
+          separatorRow.innerHTML = `<td colspan="${productData.length + 1}" class="border-t border-gray-300"></td>`;
+          comparisonTable.appendChild(separatorRow);
+        }
+
+        // 대체감미료 아래 구분선
+        if (category.isBottomSeparator) {
+          const separatorRow = document.createElement("tr");
+          separatorRow.innerHTML = `<td colspan="${productData.length + 1}" class="border-t border-gray-300"></td>`;
+          comparisonTable.appendChild(separatorRow);
+        }
+      });
+    </script>
+  </body>
+</html>
