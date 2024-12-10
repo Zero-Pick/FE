@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../components/header-login.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <my-login-header></my-login-header>
+
+    <div class="flex flex-col justify-center items-center text-center mx-auto mt-16 px-4">
+      <h1 class="font-bold text-2xl mb-4">회원가입이 거의 완료되었어요!</h1>
+      <p class="text-stone-700 mb-8">아래 몇 가지 정보만 더 기입하면 끝이에요.</p>
+      
+      <!-- 1번 문항 -->
+      <div class="w-full max-w-md">
+        <p class="text-left font-bold mb-2">1. 어떤 재료에 더 관심이 있나요?</p>
+        <p id="sliderLabel" class="text-main-01 text-sm mt-2 text-center">둘다 이 정도 관심 있어요</p>
+        <div class="flex items-center space-x-4">
+          <span class="text-gray-700 text-sm">제로칼로리</span>
+          <input 
+            type="range" 
+            id="interestSlider" 
+            min="0" 
+            max="4" 
+            value="2" 
+            class=" flex-1 h-2 bg-gray-200 rounded-lg appearance-none"
+            oninput="updateSliderLabel(this.value)">
+          <span class="text-gray-700 text-sm">제로슈거</span>
+        </div>
+      </div>
+
+      <!-- 2번 문항 -->
+      <div class="w-full max-w-md mt-8">
+        <p class="text-left font-bold mb-2">2. 당뇨 환자이거나 혈당 관리에 집중하고 있나요?</p>
+        <div class="flex flex-row space-x-8 justify-center">
+          <label class="flex items-center">
+            <input type="radio" name="diabetes" value="yes" class="mr-2">
+            <span>맞아요</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="diabetes" value="no" class="mr-2">
+            <span>아뇨, 딱히요</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 완료 버튼 -->
+      <button 
+        class="bg-main-01 text-white font-bold rounded-lg mt-12 w-80 py-3 px-8"
+        onclick="submitForm()"
+      >
+        완료
+      </button>
+    </div>
+
+    <!-- JS -->
+    <script>
+      // 슬라이더 라벨
+      function updateSliderLabel(value) {
+        const labels = [
+          '오로지 제로칼로리!',
+          '둘다 이 정도 관심 있어요',
+          '어느 하나도 포기 못 해요',
+          '둘다 이 정도 관심 있어요',
+          '오로지 제로슈거!'
+        ];
+        document.getElementById('sliderLabel').textContent = labels[value];
+      }
+
+      function submitForm() {
+        window.location.href = 'signup-fin.html';
+      }
+    </script>
+</body>
+</html>

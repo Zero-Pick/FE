@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../components/header-login.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <my-login-header></my-login-header>
+
+    <div
+      class="flex flex-col justify-center items-center text-center mx-auto mt-24"
+    >
+      <h1 class="font-bold text-2xl">회원가입이 완료되었습니다.</h1>
+      <p class="text-gray-700  mt-4">지금 바로 <span class="text-main-01">제로픽</span>에서 건강한 선택을 시작하세요!</p>
+
+      <button 
+        class="bg-main-01 text-white font-bold rounded-lg mt-12 w-80 py-3 px-8"
+        onclick="window.location.href='index.html';"
+      >
+        시작하기
+      </button>
+    </div>  
+</body>
+</html>
