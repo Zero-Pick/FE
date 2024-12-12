@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../components/header-search.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <my-search-header></my-search-header>
+
+    <div
+      class="flex flex-col justify-center items-center text-center mx-auto mt-24"
+    >
+      <h1 class="font-bold text-2xl">회원정보 수정</h1>
+      <hr class="w-full border-t border-gray-300 my-4">
+
+      <p class="text-gray-700  mt-4">회원님의 개인정보 보호를 위해</p>
+      <p class="text-gray-700">비밀번호 인증 후 정보 열람 및 변경이 가능합니다.</p>
+      
+
+      <div class="mt-4">
+        <p class="text-gray-500"> <span class="font-bold text-black p-2">이메일 </span> ab*******@naver.com</p>
+        <input 
+          type="email" 
+          placeholder="이메일을 입력하세요" 
+          class="w-80 p-3 mt-2 border border-gray-300 rounded-md "
+        />
+      </div>
+      <button 
+        class="bg-main-01 text-white font-bold rounded-lg mt-10 w-80 py-3 px-8"
+        onclick="window.location.href='mypage-profile-2 .html';"
+      >
+        확인
+      </button>
+    </div>  
+</body>
+</html>

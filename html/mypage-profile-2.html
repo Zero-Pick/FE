@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../components/header-search.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <my-search-header></my-search-header>
+
+    <div
+      class="flex flex-col justify-center items-center text-center mx-auto mt-24"
+    >
+      <h1 class="font-bold text-2xl">회원정보 수정</h1>
+      <hr class="w-full border-t border-gray-300 my-4">
+
+
+      <!-- 이메일, 닉네임 -->
+      <div class="mt-4">
+        <p class="font-bold text-black p-2">이메일 <span class="text-white bg-green-500 rounded-full py-1 px-3">네이버</span></p>
+        <p>ab*******@naver.com</p>
+
+        <p class="font-bold text-black p-2">닉네임</p>
+         <input 
+          type="text" 
+          placeholder="엎질러진엎질 " 
+          class="w-80 p-3 mt-2 border border-gray-300 rounded-md "
+        />
+      </div>
+
+      <hr class="w-full border-t border-gray-300 my-4">
+
+      <!-- 관심, 관리 -->
+       <div>
+        <!-- 관심 -->
+      <div class="w-full max-w-md">
+        <p class="text-left font-bold mb-2">관심 있는 제로 유형</p>
+        <p id="sliderLabel" class="text-main-01 text-sm mt-2 text-center">둘다 이 정도 관심 있어요</p>
+        <div class="flex items-center space-x-4">
+          <span class="text-gray-700 text-sm">제로칼로리</span>
+          <input 
+            type="range" 
+            id="interestSlider" 
+            min="0" 
+            max="4" 
+            value="2" 
+            class=" flex-1 h-2 bg-gray-200 rounded-lg appearance-none"
+            oninput="updateSliderLabel(this.value)">
+          <span class="text-gray-700 text-sm">제로슈거</span>
+        </div>
+      </div>
+
+      <!-- 관리 -->
+      <div class="w-full max-w-md mt-8">
+        <p class="text-left font-bold mb-2">당뇨 환자이거나 혈당 관리에 집중하고 있나요?</p>
+        <div class="flex flex-row space-x-8 justify-center">
+          <label class="flex items-center">
+            <input type="radio" name="diabetes" value="yes" class="mr-2">
+            <span>맞아요</span>
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="diabetes" value="no" class="mr-2">
+            <span>아뇨, 딱히요</span>
+          </label>
+        </div>
+      </div>
+
+       </div>
+      <button 
+        class="bg-main-01 text-white font-bold rounded-lg mt-10 w-80 py-3 px-8"
+      >
+        저장
+      </button>
+
+      <!-- 탈퇴 -->
+       <a href="mypage-resign.html" class="text-gray-500 mt-4">회원탈퇴</a>
+    </div>  
+</body>
+</html>
