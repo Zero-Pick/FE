@@ -18,7 +18,7 @@ class MyLoginHeader extends HTMLElement {
         />
         <div class="flex space-x-4 font-bold">
           <a id="login" href="../html/login.html" class="p-4">로그인</a>
-          <a id="join" href="" class="p-4">회원가입</a>
+          <a id="join" href="../html/signup.html" class="p-4">회원가입</a>
         </div>
       </nav>
     </header>
