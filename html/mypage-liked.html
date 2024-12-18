@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Pick</title>
+    <link href="../css/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../components/header-search.js"></script>
+    <script type="module" src="../components/main-items2.js"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- 헤더 -->
+    <my-search-header></my-search-header>
+
+    <!-- 메인 타이틀 -->
+    <div class="max-w-screen-lg mx-auto mt-8 mb-4">
+      <h1 class="text-3xl font-bold">마이페이지</h1>
+    </div>
+
+    <!-- 컨테이너 -->
+    <div class="flex mx-auto max-w-screen-lg">
+      <!-- 왼쪽 사이드바 -->
+      <aside class="w-1/4 bg-white shadow-md rounded-lg p-6 self-start">
+        <div class="flex items-center mb-6">
+          <img src="../images/logo2.png" class="h-6 w-6 mr-2" />
+          <p class="font-bold text-lg">
+            닉네임여섯님,
+            <span class="text-red-500">건강</span>하세요!
+          </p>
+        </div>
+        <ul class="space-y-4 text-gray-600">
+          <li class="font-bold text-red-500">찜한 제품 <span>13</span></li>
+          <li class="hover:text-black cursor-pointer">
+            내가 쓴 리뷰 <span>2</span>
+          </li>
+          <li class="hover:text-black cursor-pointer">제품 등록 현황</li>
+          <li class="hover:text-black cursor-pointer">
+            정보 수정 요청 현황<span class="text-red-500">•</span>
+          </li>
+          <li class="hover:text-black cursor-pointer">회원정보 수정</li>
+        </ul>
+      </aside>
+
+      <!-- 오른쪽 상품 목록 -->
+      <section class="w-3/4 bg-white p-6 shadow-md rounded-lg ml-6">
+        <h2 class="font-bold text-2xl mb-4">찜한 제품</h2>
+        <p class="text-gray-500 mb-6">총 13개</p>
+        <div id="productList" class="grid grid-cols-4 gap-4"></div>
+      </section>
+    </div>
+
+    <script type="module">
+      import { createMainItems2 } from '../components/main-items2.js';
+
+      // 더미 데이터
+      const products = [
+        {
+          sugarType: '제로칼로리',
+          name: '상품명1',
+          rating: '4.5',
+          reviewsCount: '10',
+          price: '10,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명2',
+          rating: '4.0',
+          reviewsCount: '8',
+          price: '20,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명3',
+          rating: '4.8',
+          reviewsCount: '25',
+          price: '15,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명4',
+          rating: '4.2',
+          reviewsCount: '12',
+          price: '18,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명5',
+          rating: '4.1',
+          reviewsCount: '7',
+          price: '11,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명6',
+          rating: '4.3',
+          reviewsCount: '14',
+          price: '14,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명7',
+          rating: '4.7',
+          reviewsCount: '18',
+          price: '17,000원',
+        },
+        {
+          sugarType: '제로칼로리',
+          name: '상품명8',
+          rating: '4.6',
+          reviewsCount: '15',
+          price: '16,000원',
+        },
+      ];
+
+      const productList = document.getElementById('productList');
+
+      // 상품 컴포넌트 생성 및 삽입
+      products.forEach((product) => {
+        productList.innerHTML += createMainItems2(product);
+      });
+    </script>
+  </body>
+</html>
